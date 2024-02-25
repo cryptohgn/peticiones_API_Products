@@ -1,0 +1,18 @@
+
+<div class="my-4">
+    <button class="btn btn-success my4" (click)="handleClick(true)" *ngIf="page !==total_pages">Siguiente</button>
+    <span class="mx-3">Página: {{page}}</span>
+    <button class="btn btn-warning my4 ms-3"(click)="handleClick(false)" *ngIf="page !== 1"  >Anterior</button>
+</div>
+<div class="products row" >
+    <div class="col-3" *ngFor="let product of products">
+        <div class="product">
+            <h3>{{product.name}}</h3>
+            <h4>{{product.category}}</h4>
+            <img [src]="product.image" [alt]="product.name">
+            <p>{{product.name}}</p>
+            <button class="btn btn-info"[routerLink]="'/product/' + product._id">Vista detalle</button>
+            <!-- <button class="btn btn-info"[routerLink]="['product', product._id]">Vista detalle</button> -->
+        </div>
+    </div>
+</div>

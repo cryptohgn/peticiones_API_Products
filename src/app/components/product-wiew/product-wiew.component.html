@@ -1,0 +1,17 @@
+<section class="container mt-3 border border-1 p-3">
+<h1>{{myProduct.name}}</h1>
+<hr>
+<div class="row">
+    <figure class="col-4">
+        <img class="img-fluid" [src]="myProduct.image" [alt]="myProduct.name">
+
+    </figure>
+    <div class="col-8">
+        <p><strong>Precio:</strong> {{myProduct.price}}</p>
+        <p><strong>Categoria:</strong> {{myProduct.category}}</p>
+        <p><strong>Descripción:</strong>{{myProduct.description}}</p>
+        <p><strong>Stock:</strong> {{(myProduct.active)? 'Tenemos existencias': 'Tenemos existencias' }}</p>
+        <button class="btn btn-info" [routerLink]="'/products'">Volver a Productos</button>
+    </div>
+</div>
+</section>
