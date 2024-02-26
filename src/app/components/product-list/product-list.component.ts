@@ -43,5 +43,15 @@ export class ProductListComponent {
       const response = await this.serviceProduct.getByPage(this.page)
       this.products = response.results;
     }
-
+    async selectCategory($event: any){
+      let category = $event.target.value;
+      let response = await this.serviceProduct.getAll();
+      let arrResponse =  response.results;
+      if (category !== ""){
+        this.products = arrResponse.filter(product => product.category === category)
+      } else {
+        this.products = arrResponse;
+      }
+    }
+   
 }

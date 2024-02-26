@@ -37,4 +37,8 @@ export class ProductsService {
     return firstValueFrom(
       this.httpClient.get<Product | any>(`${this.BaseUrl}${id}`)   )
   }
+
+  // getCategory(categorie: string){
+
+  // }
 }

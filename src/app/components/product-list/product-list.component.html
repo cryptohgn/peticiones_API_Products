@@ -1,9 +1,16 @@
 
-<div class="my-4">
+<div class="my-4 d-flex">
     <button class="btn btn-success my4" (click)="handleClick(true)" *ngIf="page !==total_pages">Siguiente</button>
-    <span class="mx-3">Página: {{page}}</span>
+    <p class="mx-3">Página: {{page}}</p>
     <button class="btn btn-warning my4 ms-3"(click)="handleClick(false)" *ngIf="page !== 1"  >Anterior</button>
-</div>
+
+        <select class="mt-3 form-select w-25" (change)="selectCategory($event)">
+            <option value="">Selecciona una categoría</option>
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+            <option value="niño">Niño</option>
+        </select>
+</div>  
 <div class="products row" >
     <div class="col-3" *ngFor="let product of products">
         <div class="product">
@@ -13,6 +20,7 @@
             <p>{{product.name}}</p>
             <button class="btn btn-info"[routerLink]="'/product/' + product._id">Vista detalle</button>
             <!-- <button class="btn btn-info"[routerLink]="['product', product._id]">Vista detalle</button> -->
+            
         </div>
     </div>
 </div>
